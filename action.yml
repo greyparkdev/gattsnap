@@ -1,7 +1,7 @@
 name: gattsnap diff
 description: >-
-  Compare a committed GATT snapshot against the pull request's base and annotate
-  breaking attribute-table changes inline on the snapshot file.
+  Diff a committed BLE GATT snapshot against the pull request's base and flag
+  breaking attribute-table changes.
 author: Grey Park LLC
 
 branding:
