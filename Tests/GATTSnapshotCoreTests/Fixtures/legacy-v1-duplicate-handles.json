@@ -1,0 +1,65 @@
+{
+  "adapter" : {
+    "capabilities" : {
+      "advertising_parameters" : false,
+      "gap_gatt_services" : false,
+      "handles" : true,
+      "mac_address" : false
+    },
+    "capability_version" : 1,
+    "id" : "corebluetooth"
+  },
+  "capture_metadata" : {
+    "captured_at" : "2026-09-15T00:00:00Z",
+    "tool_version" : "0.1.0"
+  },
+  "profile" : "review",
+  "schema_version" : 1,
+  "structure_hash" : "sha256:f5964d0718173fa82f7f1757b49fb7a69e1ceec7a1aa525514ba52fdff43e984",
+  "table" : {
+    "services" : [
+      {
+        "characteristics" : [
+          {
+            "descriptors" : [
+
+            ],
+            "handles" : {
+              "declaration" : 5,
+              "value" : 6
+            },
+            "instance" : 0,
+            "properties" : [
+              "read"
+            ],
+            "uuid" : "2A37"
+          },
+          {
+            "descriptors" : [
+
+            ],
+            "handles" : {
+              "declaration" : 2,
+              "value" : 3
+            },
+            "instance" : 1,
+            "properties" : [
+              "notify"
+            ],
+            "uuid" : "2A37"
+          }
+        ],
+        "handles" : {
+          "end" : 10,
+          "start" : 1
+        },
+        "included_services" : [
+
+        ],
+        "instance" : 0,
+        "primary" : true,
+        "uuid" : "180D"
+      }
+    ]
+  }
+}

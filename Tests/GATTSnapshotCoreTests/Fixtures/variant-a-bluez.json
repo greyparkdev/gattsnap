@@ -1,0 +1,121 @@
+{
+  "schema_version" : 1,
+  "profile" : "gattsnap-spike",
+  "adapter" : {
+    "id" : "bluez",
+    "capability_version" : 1,
+    "capabilities" : {
+      "advertising_parameters" : true,
+      "gap_gatt_services" : true,
+      "handles" : true,
+      "mac_address" : true
+    }
+  },
+  "structure_hash" : "sha256:4d0303682a545f41ad7672568622be3e3bcf173be6b2201623239675cdffc83b",
+  "capture_metadata" : {
+    "captured_at" : "2026-08-07T12:00:00Z",
+    "tool_version" : "0.1.0",
+    "host" : "ci-linux-01",
+    "advertised_local_name" : "gattsnap-spike",
+    "mac_address" : "02:00:00:00:00:01",
+    "rssi" : -55,
+    "mtu" : 247,
+    "discovery_duration_ms" : 310
+  },
+  "table" : {
+    "services" : [
+      {
+        "uuid" : "1800",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 1, "end" : 7 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "2A00",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 2, "value" : 3 },
+            "value_hex" : "67617474736E61702D7370696B65",
+            "descriptors" : []
+          },
+          {
+            "uuid" : "2A01",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 4, "value" : 5 },
+            "descriptors" : []
+          }
+        ]
+      },
+      {
+        "uuid" : "1801",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 8, "end" : 11 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "2A05",
+            "instance" : 0,
+            "properties" : [ "indicate" ],
+            "handles" : { "declaration" : 9, "value" : 10 },
+            "descriptors" : [
+              { "uuid" : "2902", "instance" : 0, "handle" : 11, "value_hex" : "0000" }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid" : "180A",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 12, "end" : 16 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "2A24",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 13, "value" : 14 },
+            "value_hex" : "53312D31",
+            "descriptors" : []
+          },
+          {
+            "uuid" : "2A29",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 15, "value" : 16 },
+            "value_hex" : "41434D45",
+            "descriptors" : []
+          }
+        ]
+      },
+      {
+        "uuid" : "AAAA0000-9E57-4A5B-9C1D-000000000001",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 17, "end" : 23 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "A1A10000-9E57-4A5B-9C1D-000000000011",
+            "instance" : 0,
+            "properties" : [ "read", "notify" ],
+            "handles" : { "declaration" : 18, "value" : 19 },
+            "descriptors" : [
+              { "uuid" : "2902", "instance" : 0, "handle" : 20, "value_hex" : "0000" }
+            ]
+          },
+          {
+            "uuid" : "A2A20000-9E57-4A5B-9C1D-000000000012",
+            "instance" : 0,
+            "properties" : [ "write" ],
+            "handles" : { "declaration" : 21, "value" : 22 },
+            "descriptors" : []
+          }
+        ]
+      }
+    ]
+  }
+}

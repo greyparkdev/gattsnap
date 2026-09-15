@@ -1,0 +1,10 @@
+# The build directory is large and is rebuilt inside the image anyway; sending
+# it as build context is the difference between a fast image build and a slow
+# one. gattsnap.app is a signed macOS bundle and is meaningless on Linux.
+.build/
+*.app/
+.swiftpm/
+.git/
+.DS_Store
+docs/
+spike/

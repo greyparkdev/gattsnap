@@ -1,0 +1,75 @@
+name: gattsnap diff
+description: >-
+  Compare a committed GATT snapshot against the pull request's base and annotate
+  breaking attribute-table changes inline on the snapshot file.
+author: Grey Park LLC
+
+branding:
+  icon: bluetooth
+  color: blue
+
+inputs:
+  snapshot:
+    description: >-
+      Path to the committed snapshot, relative to the repository root. This is
+      the head side of the comparison.
+    required: true
+
+  base:
+    description: >-
+      Path to an explicit base snapshot. Leave empty to read the same file from
+      base-ref, which is the normal pull-request workflow.
+    required: false
+    default: ''
+
+  base-ref:
+    description: >-
+      Git ref the snapshot is compared against. Defaults to the pull request's
+      base commit. Requires actions/checkout with fetch-depth 0, or the commit
+      will not be present in the runner's clone.
+    required: false
+    default: ''
+
+  diff-handles:
+    description: >-
+      Compare attribute handles, so a handle shift is reported as breaking.
+      Requires both snapshots to have been captured with --include-handles;
+      without that the run is downgraded rather than improved.
+    required: false
+    default: 'false'
+
+  fail-on-warning:
+    description: Promote diff warnings into the exit code.
+    required: false
+    default: 'false'
+
+  fail-on:
+    description: >-
+      Which results fail the step.
+      "breaking" (default) fails on exit 2, 3 or 4 — breaking changes, a
+      degraded comparison, or warnings under fail-on-warning.
+      "any-change" additionally fails on exit 1, any additive or cosmetic change.
+      "never" always succeeds and leaves the annotations as the only signal.
+    required: false
+    default: 'breaking'
+
+outputs:
+  exit-code:
+    description: The gattsnap exit code — 0 clean, 1 additive/cosmetic, 2 breaking, 3 degraded, 4 warnings.
+  verdict:
+    description: One-line plain-English reading of the exit code.
+  compared:
+    description: >-
+      "true" when two snapshots were compared. "false" when the snapshot is new
+      on this branch and there was nothing to compare it against.
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.snapshot }}
+    - ${{ inputs.base }}
+    - ${{ inputs.base-ref }}
+    - ${{ inputs.diff-handles }}
+    - ${{ inputs.fail-on-warning }}
+    - ${{ inputs.fail-on }}

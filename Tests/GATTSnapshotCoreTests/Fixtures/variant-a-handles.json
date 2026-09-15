@@ -1,0 +1,79 @@
+{
+  "schema_version" : 1,
+  "profile" : "gattsnap-spike",
+  "adapter" : {
+    "id" : "corebluetooth",
+    "capability_version" : 1,
+    "capabilities" : {
+      "advertising_parameters" : false,
+      "gap_gatt_services" : false,
+      "handles" : true,
+      "mac_address" : false
+    }
+  },
+  "structure_hash" : "sha256:9b0bafcda9f74647dd9b78208495d16bf447513057be786bb1891c96f6140498",
+  "capture_metadata" : {
+    "captured_at" : "2026-08-07T13:00:00Z",
+    "tool_version" : "0.1.0",
+    "host" : "build-01",
+    "advertised_local_name" : "gattsnap-spike",
+    "peripheral_identifier" : "00000000-0000-4000-8000-000000000001",
+    "rssi" : -57,
+    "mtu" : 23,
+    "discovery_duration_ms" : 471
+  },
+  "table" : {
+    "services" : [
+      {
+        "uuid" : "180A",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 12, "end" : 16 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "2A24",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 13, "value" : 14 },
+            "value_hex" : "53312D31",
+            "descriptors" : []
+          },
+          {
+            "uuid" : "2A29",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "handles" : { "declaration" : 15, "value" : 16 },
+            "value_hex" : "41434D45",
+            "descriptors" : []
+          }
+        ]
+      },
+      {
+        "uuid" : "AAAA0000-9E57-4A5B-9C1D-000000000001",
+        "instance" : 0,
+        "primary" : true,
+        "handles" : { "start" : 17, "end" : 23 },
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "A1A10000-9E57-4A5B-9C1D-000000000011",
+            "instance" : 0,
+            "properties" : [ "read", "notify" ],
+            "handles" : { "declaration" : 18, "value" : 19 },
+            "descriptors" : [
+              { "uuid" : "2902", "instance" : 0, "handle" : 20, "value_hex" : "0000" }
+            ]
+          },
+          {
+            "uuid" : "A2A20000-9E57-4A5B-9C1D-000000000012",
+            "instance" : 0,
+            "properties" : [ "write" ],
+            "handles" : { "declaration" : 21, "value" : 22 },
+            "descriptors" : []
+          }
+        ]
+      }
+    ]
+  }
+}

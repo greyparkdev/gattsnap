@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: nothing here needs to write to the repo, and pull requests
+# from forks should never get a writable token. No secrets are referenced by any
+# job below, so fork PRs run the full suite safely.
+permissions:
+  contents: read
+
+jobs:
+  # Core and Report must keep building without CoreBluetooth. This is the check
+  # that enforces it, and it has caught real problems — see docs/project-state.md.
+  linux:
+    runs-on: ubuntu-latest
+    container: swift:6.1-noble
+    steps:
+      - uses: actions/checkout@v7
+      - run: swift build
+      - run: swift test
+
+  macos:
+    # macos-14 ships Xcode 15 / Swift 5.10, which cannot even parse a
+    # swift-tools-version 6.0 manifest. macos-15 defaults to Xcode 16.4, whose
+    # Swift 6.1 matches the Linux container above.
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+      - run: swift build
+      # Capture is not exercised here: it needs a radio, a physical peripheral
+      # and a TCC grant that a hosted runner cannot give. Everything else runs.
+      - run: swift test
+
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: ./scripts/test-action.sh

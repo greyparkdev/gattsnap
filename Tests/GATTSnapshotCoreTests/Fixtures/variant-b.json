@@ -1,0 +1,85 @@
+{
+  "schema_version" : 1,
+  "profile" : "gattsnap-spike",
+  "adapter" : {
+    "id" : "corebluetooth",
+    "capability_version" : 1,
+    "capabilities" : {
+      "advertising_parameters" : false,
+      "gap_gatt_services" : false,
+      "handles" : false,
+      "mac_address" : false
+    }
+  },
+  "structure_hash" : "sha256:457b8b97ed255afb594608d48bc57ad18e99604f280fd621720fef976f4dd054",
+  "capture_metadata" : {
+    "captured_at" : "2026-08-07T09:15:00Z",
+    "tool_version" : "0.1.0",
+    "host" : "build-01",
+    "advertised_local_name" : "gattsnap-spike",
+    "peripheral_identifier" : "00000000-0000-4000-8000-000000000001",
+    "rssi" : -61,
+    "mtu" : 23,
+    "discovery_duration_ms" : 452
+  },
+  "table" : {
+    "services" : [
+      {
+        "uuid" : "180A",
+        "instance" : 0,
+        "primary" : true,
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "2A24",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "value_hex" : "53312D31",
+            "descriptors" : []
+          },
+          {
+            "uuid" : "2A29",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "value_hex" : "41434D45",
+            "descriptors" : []
+          }
+        ]
+      },
+      {
+        "uuid" : "AAAA0000-9E57-4A5B-9C1D-000000000001",
+        "instance" : 0,
+        "primary" : true,
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "A1A10000-9E57-4A5B-9C1D-000000000011",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "descriptors" : []
+          },
+          {
+            "uuid" : "A3A30000-9E57-4A5B-9C1D-000000000013",
+            "instance" : 0,
+            "properties" : [ "read", "write" ],
+            "descriptors" : []
+          }
+        ]
+      },
+      {
+        "uuid" : "BBBB0000-9E57-4A5B-9C1D-000000000002",
+        "instance" : 0,
+        "primary" : true,
+        "included_services" : [],
+        "characteristics" : [
+          {
+            "uuid" : "B1B10000-9E57-4A5B-9C1D-000000000021",
+            "instance" : 0,
+            "properties" : [ "read" ],
+            "descriptors" : []
+          }
+        ]
+      }
+    ]
+  }
+}

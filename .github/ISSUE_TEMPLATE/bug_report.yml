@@ -1,0 +1,51 @@
+name: Bug report
+description: Something gattsnap did wrong — a bad diff, a crash, a misclassification, or a confusing report.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. gattsnap is experimental, so concrete reproductions help a lot.
+
+        **Please do not paste a snapshot captured from a device you don't own or can't share.**
+        A synthetic fixture (see `Tests/GATTSnapshotCoreTests/Fixtures/`) or a redacted snapshot
+        is almost always enough to reproduce a parsing or diffing bug. For a security issue, use
+        the Security tab instead of this form.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what did gattsnap do instead?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The exact command you ran (and the exit code, if relevant).
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: >
+        Steps to reproduce. If you can, attach a synthetic or redacted snapshot, or point at a
+        fixture, that shows the problem.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: gattsnap version / commit
+      description: Release tag, or `git rev-parse --short HEAD`.
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and Swift version
+      description: e.g. "macOS 15.1, Swift 6.1" or "Ubuntu 24.04, swift:6.1-noble".
+    validations:
+      required: true
