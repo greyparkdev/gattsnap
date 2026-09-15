@@ -286,7 +286,7 @@ earlier, wherever the hardware is.
   with:
     fetch-depth: 0        # required: the base snapshot is read with `git show`
 
-- uses: greyparkdev/gattsnap@v1
+- uses: greyparkdev/gattsnap@v0.1.0
   with:
     snapshot: snapshots/acme-sensor.json
     fail-on: breaking

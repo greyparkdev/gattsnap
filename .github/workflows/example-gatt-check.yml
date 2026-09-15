@@ -30,7 +30,7 @@ jobs:
 
       - name: Diff the GATT snapshot
         id: gatt
-        uses: greyparkdev/gattsnap@v1
+        uses: greyparkdev/gattsnap@v0.1.0
         with:
           snapshot: snapshots/acme-sensor.json
           # Turn this on once every capture in the repository was taken with
