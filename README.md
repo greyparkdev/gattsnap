@@ -309,6 +309,11 @@ A snapshot that is new on the branch has nothing to compare against, so the
 action reports that and passes. The pull request that first adopts `gattsnap` is
 not the one it should block.
 
+A complete, working consumer repository — committed snapshot, workflow, and
+example pull requests showing a failing breaking-change check and a passing
+cosmetic one — is at
+[greyparkdev/acme-sensor-firmware](https://github.com/greyparkdev/acme-sensor-firmware).
+
 ### Plain `run:` steps
 
 No action required if you would rather not add one:
